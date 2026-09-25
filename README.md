@@ -40,3 +40,10 @@ O rebase interativo (`git rebase -i`) permite reescrever o histórico local ante
 ## Cenário 3: Ciclo de Code Review e Higiene com Commit Amend.
 Durante a revisão de um Pull Request, ajustes pontuais não devem gerar commits ruidosos no histórico (como "fix: typo" ou "ajuste"). O comando `git commit --amend` permite atualizar a última submissão diretamente, mantendo a entrega atômica e linear antes da integração na main.
 - **Comando Utilizado:** `git commit --amend --no-edit` para absorver o stage mantendo a mensagem original, ou com nova flag `-m` para atualizar o título.
+
+## Cenário 4: Estratégias de Integração de Pull Requests no GitHub.
+A escolha do método de fechamento de um Pull Request define a topologia da branch principal (`main`). Cada abordagem atende a um objetivo específico de rastreabilidade ou linearidade.
+
+- **Merge Commit:** Preserva o histórico exato da branch de origem e gera um nó explícito de junção com dois commits-pai. Mantém o contexto temporal completo, mas gera bifurcações visuais na árvore.
+- **Squash and Merge:** Condensa todos os commits da branch de feature em um único commit atômico aplicado sobre a main. Elimina ruídos intermediários do desenvolvimento, ideal para features pequenas ou médias.
+- **Rebase and Merge:** Replica linearmente cada commit da feature no topo da main sem criar commit de merge. Mantém commits individuais, mas altera os hashes originais e exige que todos os commits estejam rigorosamente limpos.
