@@ -28,4 +28,4 @@ A ideia aqui não é só anotar teoria, mas usar o próprio repositório para te
 * Diferenças práticas entre Merge Commit, Squash and Merge e Rebase and Merge no GitHub.
 
 ## Cenário 1: Resolução de Conflitos.
-Estratégia adotada: Integrar ambas as alterações mantendo o histórico de auditoria.
+Estratégia adotada: Integração manual realizada após divergência entre a branch de desenvolvimento e a main. Ambas as propostas foram avaliadas e consolidadas para manter o histórico de auditoria e a estabilidade da release.
