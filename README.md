@@ -29,3 +29,10 @@ A ideia aqui não é só anotar teoria, mas usar o próprio repositório para te
 
 ## Cenário 1: Resolução de Conflitos.
 Estratégia adotada: Integração manual realizada após divergência entre a branch de desenvolvimento e a main. Ambas as propostas foram avaliadas e consolidadas para manter o histórico de auditoria e a estabilidade da release.
+
+## Cenário 2: Limpeza de Histórico com Rebase Interativo.
+O rebase interativo (`git rebase -i`) permite reescrever o histórico local antes de integrá-lo à branch principal. A técnica combina múltiplos commits intermediários em uma única entrega atômica via `squash` ou `fixup`, eliminando ruídos de desenvolvimento e garantindo um histórico linear e auditável.
+
+### Caso Real Durante o Cenário 2: Correção de Linhagem com Rebase Onto
+- **Problema:** Criei a branch de feature inadvertidamente a partir de `feature/conflict-guide` em vez de `main`, herdando histórico desatualizado.
+- **Solução Técnica:** Usei o comando `git rebase --onto main <commit-base> <branch>` para transplantar a cadeia de commits diretamente para o topo da `main`, resolvendo os conflitos de patch passo a passo via `--continue`.
