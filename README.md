@@ -26,3 +26,6 @@ A ideia aqui não é só anotar teoria, mas usar o próprio repositório para te
 * Limpeza de commits usando rebase interativo (`squash` e `fixup`).
 * Boas práticas de Code Review e atendimento a feedbacks.
 * Diferenças práticas entre Merge Commit, Squash and Merge e Rebase and Merge no GitHub.
+
+## Cenário 1: Resolução de Conflitos.
+Estratégia adotada: Manter as alterações locais priorizando a versão da branch de release.
