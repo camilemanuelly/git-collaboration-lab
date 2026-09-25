@@ -36,3 +36,7 @@ O rebase interativo (`git rebase -i`) permite reescrever o histórico local ante
 ### Caso Real Durante o Cenário 2: Correção de Linhagem com Rebase Onto
 - **Problema:** Criei a branch de feature inadvertidamente a partir de `feature/conflict-guide` em vez de `main`, herdando histórico desatualizado.
 - **Solução Técnica:** Usei o comando `git rebase --onto main <commit-base> <branch>` para transplantar a cadeia de commits diretamente para o topo da `main`, resolvendo os conflitos de patch passo a passo via `--continue`.
+
+## Cenário 3: Ciclo de Code Review e Higiene com Commit Amend.
+Durante a revisão de um Pull Request, ajustes pontuais não devem gerar commits ruidosos no histórico (como "fix: typo" ou "ajuste"). O comando `git commit --amend` permite atualizar a última submissão diretamente, mantendo a entrega atômica e linear antes da integração na main.
+- **Comando Utilizado:** `git commit --amend --no-edit` para absorver o stage mantendo a mensagem original, ou com nova flag `-m` para atualizar o título.
